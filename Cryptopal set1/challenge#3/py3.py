@@ -66,10 +66,10 @@ def break_bit_xor(b1):
     for i in range(256):
         b2 = [i] * len(b1)
         plaintext = bytes(xor(b1, b2))
-        pscore = score(plaintext)
+        tempscore = score(plaintext)
 
-        if pscore > maxscore or not maxscore:
-            maxscore = pscore
+        if tempscore > maxscore or not maxscore:
+            maxscore = tempscore
             text = plaintext
             key = chr(i)
     return key, text
